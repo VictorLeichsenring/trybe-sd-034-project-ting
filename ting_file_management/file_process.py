@@ -41,4 +41,4 @@ def file_metadata(instance, position):
             "linhas_do_arquivo": file_info['linhas_do_arquivo']
         })
     except IndexError:
-        print("Posição inválida", file=sys.stderr)
+        print('Posição inválida', file=sys.stderr)
