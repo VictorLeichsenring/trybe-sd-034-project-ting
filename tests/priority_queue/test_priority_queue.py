@@ -12,9 +12,11 @@ def test_basic_priority_queueing():
     assert result["name_file"] == "longo"
     assert result["qtd_linhas"] == 12
     assert len(pq) == 3
-    pq.dequeue()
+    remove1 = pq.dequeue()
     assert len(pq) == 2
-    pq.dequeue()
+    assert remove1["name_file"] == 'curto'
+    remove2 = pq.dequeue()
     assert len(pq) == 1
+    assert remove2["name_file"] == 'longo'
     with pytest.raises(IndexError, match="Índice Inválido ou Inexistente"):
         pq.search(2)
